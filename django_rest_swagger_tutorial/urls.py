@@ -15,14 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from rest_framework.routers import DefaultRouter
 from django.conf.urls import url, include
-
 from musics.views import MusicViewSet
+# rest router
+from rest_framework.routers import DefaultRouter
+# swagger
+from rest_framework_swagger.views import get_swagger_view
+
 router = DefaultRouter()
 router.register('music', MusicViewSet, base_name='music')
 
+schema_view = get_swagger_view(title='API')
+
 urlpatterns = [
+    path('docs/', schema_view),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
