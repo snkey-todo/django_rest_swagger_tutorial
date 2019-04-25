@@ -4,6 +4,8 @@ django rest swagger framework tutorial
 
 基于[django_rest_tutorial](https://github.com/zhusheng/django_rest_tutorial)进行迭代。
 
+swagger框架你可以理解为一个装饰器，把我们的rest框架包装的更加好看、好用。
+
 ## 配置swagger框架
 
 授权部分，在rest框架部分已经做了，这里我们补充一些swagger框架提供的授权即可。
